@@ -11,7 +11,6 @@ function App() {
         <h1>Bookstore CMS</h1>
         <Nav />
       </div>
-
       <Routes>
         <Route path="/categories" element={<Categories />} />
         <Route path="/" element={<BooksList />} />

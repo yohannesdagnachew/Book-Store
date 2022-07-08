@@ -11,7 +11,7 @@ const Nav = () => (
       }}
     >
       <li>
-        <NavLink activeStyle={{ color: 'orangered' }} to="/home">
+        <NavLink activeStyle={{ color: 'orangered' }} to="/">
           BOOKS
         </NavLink>
       </li>
