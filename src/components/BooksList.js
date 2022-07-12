@@ -1,23 +1,14 @@
+/* eslint-disable react/prop-types */
 import React from 'react';
 import Book from './Book';
 import AddBooks from './AddBooks';
 
-const BooksList = () => {
-  const bookslist = [
+// eslint-disable-next-line react/prop-types
+const BooksList = ({ bookslist }) => {
+  // eslint-disable-next-line no-unused-vars
+  const books = [
     {
-      title: 'Mewtat Ena Megbat',
-      author: 'Bewketu Seyoum',
-      id: 1,
-    },
-    {
-      title: 'Muart',
-      author: 'Yatsede Lij',
-      id: 2,
-    },
-    {
-      title: 'Kes Mahari',
-      author: 'Endale Geta',
-      id: 3,
+      book: 'one',
     },
   ];
 
