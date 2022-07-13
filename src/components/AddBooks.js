@@ -10,8 +10,6 @@ const AddBooks = () => {
     title: '',
     author: '',
   });
-  const [books] = useState();
-  console.log(books, setInput);
   const handleKeydown = (event) => {
     setInput({
       ...input,
