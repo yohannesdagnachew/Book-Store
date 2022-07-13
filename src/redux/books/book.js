@@ -1,34 +1,48 @@
-const inState = [];
+import { v4 as uuidv4 } from 'uuid';
+
+const inState = [
+  {
+    title: 'Mewtat Ena Megbat',
+    author: 'Bewketu Seyoum',
+    id: '1',
+  },
+  {
+    title: 'Muart',
+    author: 'Yatsede Lij',
+    id: '2',
+  },
+  {
+    title: 'Kes Mahari',
+    author: 'Endale Geta',
+    id: '3',
+  },
+];
 const ADD_BOOK = './books/ADD_BOOK';
 const REMOVE_BOOK = './books/REMOVE_BOOK';
 
-const bookSlice = (state = inState, action) => {
+const bookReducer = (state = inState, action) => {
   switch (action.type) {
     case ADD_BOOK: {
       const newBook = {
-        id: Math.floor(Math.random() * 1000),
-        title: action.book.title,
-        author: action.book.author,
-        category: action.book.category,
+        id: uuidv4(),
+        ...action.book,
       };
       return [...state, newBook];
     }
     case REMOVE_BOOK: {
-      const remove = state.filter((book) => book[0] !== action.id);
-      return remove;
+      const newlist = state.filter((book) => book.id !== action.id);
+      return newlist;
     }
-    default:
-      return state;
+    default: return state;
   }
 };
-export const addBookFunc = (book) => ({
+
+export const addbook = (book) => ({
   type: ADD_BOOK,
   book,
 });
-
-export const removeBookFunc = (id) => ({
+export const delBook = (id) => ({
   type: REMOVE_BOOK,
   id,
 });
-
-export default bookSlice.reducer;
+export default bookReducer;
