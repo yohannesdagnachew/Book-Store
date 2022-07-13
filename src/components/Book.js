@@ -1,8 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import './Book.css';
+import { useDispatch } from 'react-redux/';
+import { delBook } from '../redux/books/book';
 
-function Book({ List: { title, author } }) {
+function Book({ List: { title, author, id } }) {
+  const dispatch = useDispatch();
+  const removeBook = (e) => {
+    dispatch(delBook(e.target.id));
+  };
   return (
     <div>
       <div className="main">
@@ -12,7 +18,7 @@ function Book({ List: { title, author } }) {
       <ul className="list">
         <li>Comments</li>
         <li>
-          <button type="button">Remove</button>
+          <button type="button" id={id} onClick={removeBook}>Remove</button>
         </li>
         <li>Edit</li>
       </ul>
