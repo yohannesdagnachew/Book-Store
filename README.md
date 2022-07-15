@@ -3,6 +3,7 @@
 > Project Description.
 
 > "Book Store"
+![Leaderboard](/img/book.png)
 
 ## Languages
 
