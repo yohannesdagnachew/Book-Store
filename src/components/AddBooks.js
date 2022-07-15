@@ -36,6 +36,7 @@ const AddBooks = () => {
 
   return (
     <form className="form" onSubmit={handleSubmit}>
+      <div className="horizontal-divider" />
       <h3 className="form-title">Add New Book</h3>
       <div className="form-input">
         <input
