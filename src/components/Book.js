@@ -1,24 +1,24 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import './Book.css';
-import { useDispatch } from 'react-redux/';
-import { delBook } from '../redux/books/book';
+import { useDispatch } from 'react-redux';
+import { deleteBook } from '../redux/books/asyncActions';
 
-function Book({ List: { title, author, id } }) {
+function Book({ List: book }) {
   const dispatch = useDispatch();
-  const removeBook = (e) => {
-    dispatch(delBook(e.target.id));
-  };
+
+  const handleDelete = () => dispatch(deleteBook(book.item_id));
+
   return (
     <div>
       <div className="main">
-        <h2>{ title }</h2>
-        <h3>{ author }</h3>
+        <h2>{ book.title }</h2>
+        <h3>{ book.author }</h3>
       </div>
       <ul className="list">
         <li>Comments</li>
         <li>
-          <button type="button" id={id} onClick={removeBook}>Remove</button>
+          <button onClick={handleDelete} type="button">Remove</button>
         </li>
         <li>Edit</li>
       </ul>
@@ -27,13 +27,16 @@ function Book({ List: { title, author, id } }) {
 }
 
 Book.defaultProps = {
-  List: null,
+  title: null,
+  author: null,
+  item_id: null,
 };
 
 Book.propTypes = {
-  List: null,
-  author: PropTypes.string.isRequired,
-  title: PropTypes.string.isRequired,
+  List: PropTypes.instanceOf(Object).isRequired,
+  author: PropTypes.string,
+  title: PropTypes.string,
+  item_id: PropTypes.number,
 };
 
 export default Book;
