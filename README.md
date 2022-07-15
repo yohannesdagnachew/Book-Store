@@ -1,7 +1,8 @@
 # Book Store
 
 > Project Description.
-   A web app developed using React. It's a simple list application, for books. This template can be used for any listing application. It also has a small router for categories pages. Other than Books, all pages are static components.
+
+> A web app developed using React. It's a simple list application, for books. This template can be used for any listing application. It also has a small router for categories pages. Other than Books, all pages are static components.
 ![Leaderboard](/img/book.png
 ## Languages
 
