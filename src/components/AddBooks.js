@@ -36,23 +36,28 @@ const AddBooks = () => {
 
   return (
     <form className="form" onSubmit={handleSubmit}>
-      <input
-        type="text"
-        placeholder="Title"
-        name="title"
-        required
-        value={input.title}
-        onChange={handleKeydown}
-      />
-      <input
-        type="text"
-        placeholder="Author"
-        name="author"
-        required
-        value={input.author}
-        onChange={handleKeydown}
-      />
-      <button type="submit">Add new</button>
+      <h3 className="form-title">Add New Book</h3>
+      <div className="form-input">
+        <input
+          className="new-title"
+          type="text"
+          placeholder="Book Title"
+          name="title"
+          required
+          value={input.title}
+          onChange={handleKeydown}
+        />
+        <input
+          className="author"
+          type="text"
+          placeholder="Author"
+          name="author"
+          required
+          value={input.author}
+          onChange={handleKeydown}
+        />
+        <button className="Add" type="submit">Add new</button>
+      </div>
     </form>
   );
 };

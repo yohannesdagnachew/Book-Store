@@ -8,7 +8,6 @@ function App() {
   return (
     <div className="App">
       <div className="header">
-        <h1>Bookstore CMS</h1>
         <Nav />
       </div>
       <Routes>
